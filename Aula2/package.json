@@ -1,5 +1,5 @@
 {
     "scripts": {
-        "teste": "jest"
+        "test": "jest"
     }
 }
