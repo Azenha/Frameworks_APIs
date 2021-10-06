@@ -1,0 +1,35 @@
+@layout('layouts.padrao')
+
+@section('content')
+<h1>Cadastre um livro</h1>
+
+<form action="/livros" method="POST">
+{{ csrfField() }}
+
+<div class="form-group">
+    <label for="titulo">Título</label>
+    <input type="text" name="titulo" class="form-control" value="{{ old('titulo', '') }}">
+    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('titulo'), hasErrorFor('titulo')) }}
+</div>
+
+<div class="form-group">
+    <label for="autora">Autora</label>
+    <input type="text" name="autora" class="form-control" value="{{ old('autora', '') }}">
+    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('autora'), hasErrorFor('autora')) }}
+</div>
+
+<div class="form-group">
+    <label for="capa">Capa</label>
+    <input type="text" name="capa" class="form-control" placeholder="Link da Imagem" value="{{ old('capa','') }}">
+    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('capa'), hasErrorFor('capa')) }}
+</div>
+
+<div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input type="text" name="isbn" class="form-control" value="{{ old('isbn', '') }}">
+    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('isbn'), hasErrorFor('isbn')) }}
+</div>
+
+<input type="submit" value="Cadastrar" class="btn btn-primary">
+</form>
+@endsection

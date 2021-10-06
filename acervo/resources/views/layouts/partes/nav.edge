@@ -1,0 +1,12 @@
+<header class="d-flex justify-content-center py-3">
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="/" class="nav-link active">Acervo</a></li>
+    @loggedIn
+    <li class="nav-item"><a href="/livros/cadastrar" class="nav-link">Escrever</a></li>
+    <li class="nav-item"><a href="/cadastrar" class="nav-link">Leitor</a></li>
+    <li class="nav-item"><a href="/sair" class="nav-link">Sair</a></li>
+    @else
+    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+    @endloggedIn
+  </ul>
+</header>

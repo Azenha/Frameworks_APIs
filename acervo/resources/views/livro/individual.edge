@@ -1,0 +1,37 @@
+@layout('layouts.padrao')
+
+@section('content')
+<div class="table-responsive">
+  <h1>{{ livro.titulo }}</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Autora</th>
+        <th scope="col">Capa</th>
+        <th scope="col">ISBN</th>
+        @loggedIn
+        <th scope="col">Controle</th>
+        @endloggedIn
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ livro.titulo }}</th>
+        <td>{{ livro.autora }}</td>
+        <td><img src="{{ livro.capa }}" alt="{{ livro.titulo }}" style="width: 300px;"></td>
+        <td>{{ livro.isbn }}</td>
+        @loggedIn
+        <td>
+          <a href="/livros/{{ livro.id }}/editar" class="btn btn-warning" type="button">Editar</a>
+          <form action="/livros/{{ livro.id }}?_method=DELETE" method="POST">
+            {{ csrfField() }}
+            <input type="submit" class="btn btn-danger" value="Deletar">
+          </form>
+        </td>
+        @endloggedIn
+      </tr>
+    </tbody>
+  </table>
+</div>
+@endsection

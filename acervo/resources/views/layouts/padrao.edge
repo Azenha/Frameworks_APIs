@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acervo de RPG</title>
+    {{style('https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css')}}
+  </head>
+  <body>
+    
+    @include('layouts/partes/nav')
+
+    <div class="container">
+      @!section('content')
+    </div>
+
+    {{script('https://code.jquery.com/jquery-3.6.0.slim.min.js') }}
+    {{script('https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js')}}
+    {{script('https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js')}}
+  </body>
+</html>

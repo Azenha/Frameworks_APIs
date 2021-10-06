@@ -1,0 +1,33 @@
+@layout('layouts.padrao')
+
+@section('content')
+<h1>Acervo</h1>
+
+@if(old('notification'))
+<div class="alert alert-success">
+    {{ old('notification') }}
+</div>
+@endif
+<div class="table-responsive">
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Capa</th>
+            <th scope="col">Título</th>
+            <th scope="col">Autora</th>
+            <th scope="col">ISBN</th>
+        </tr>
+    </thead>
+    <tbody>
+        @each(livro in livros)
+        <tr>
+            <td><a href="/livros/{{ livro.id }}"><img src="{{ livro.capa }}" alt="{{ livro.titulo }}" style="width: 100px;"></a></td>
+            <td scope="row">{{ livro.titulo }}</td>
+            <td>{{ livro.autora }}</td>
+            <td>{{ livro.isbn }}</td>
+        </tr>
+        @endeach
+    </tbody>
+</table>
+</div>
+@endsection
