@@ -1,3 +1,9 @@
+Versão atualizada em:
+
+[Github](https://github.com/Azenha/Acervo)
+[Replit]()
+[Heroku]()
+
 # Acervo de livros
 
 Realizado para a Disciplina de Frameworks e APIs.
@@ -6,8 +12,8 @@ Sistema de cadastro de livros com autenticação de usuários, CRUD completo no 
 
 ## TODO
 
-[] implementar API da ISBN
-[] trocar CSS para o BULMA
+- [ ] implementar API da ISBN
+- [ ] trocar CSS para o BULMA
 
 ## Adonis fullstack application
 
